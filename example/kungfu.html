@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no, minimal-ui">
+	<title>Document</title>
+	<style>
+		body {
+			padding: 0;
+			margin: 0;
+		}
+
+		.P {
+			background: #eee;
+			width: 50%;
+			text-align: center;
+			box-sizing: border-box;
+			float:left;
+			line-height: 30px
+		}
+		
+		#LiXiaolong {
+			border-right: 1px solid #fff;
+		}
+
+		.top {
+			text-align: center;
+			line-height: 30px;
+			background: #d1d1d1;
+		}
+		
+		.top1 {
+			text-align: center;
+			line-height: 40px;
+			background: #c1c1c1;
+			font-size: 20px;
+		}
+	</style>
+</head>
+<body>
+	<section>
+		<div class="top1">Kung Fu</div>
+		<div class="top">李小龙 v.s. 路人甲</div>
+	</section>
+	<section class="P" id="LiXiaolong">
+	</section>
+	<section class="P" id="LuRenjia">
+	</section>
+	
+
+
+
+<script src="../src/kungfu.js"></script>
+<script>
+
+	function LXL( hit ){
+		return function() {
+			document.getElementById( 'LiXiaolong' ).innerHTML += '<div>' + hit + '</div>';
+		}
+	}
+
+	function LRJ( hit ){
+		return function() {
+			document.getElementById( 'LuRenjia' ).innerHTML += '<div>' + hit + '</div>';
+		}
+	}
+
+	kungfu( 'LiXiaolong' )
+		.hit( LXL( '左勾拳' ) , 1000 )
+		.hit( LXL( '右钩拳' ) , 1000 )
+		.hit( LXL( '升龙拳' ) , 1000 )
+		.hit( LXL( '无影脚' ) , 1000 )
+		.hit( LXL( '踢' ) , 600 )
+		.hit( LXL( '踢' ) , 200 )
+		.hit( LXL( '踢' ) , 200 )
+		.hit( LXL( '踢' ) , 200 )
+		.hit( LXL( '踢' ) , 200 )
+		.hit( LXL( '踢' ) , 200 )
+		.hit( LXL( '踢' ) , 200 )
+		.hit( LXL( '渣渣!' ) , 1000 );
+
+	kungfu( 'LuRenjia' )
+		.hit( LRJ( '闪' ) , 1500 )
+		.hit( LRJ( '痛' ) , 1000 )
+		.hit( LRJ( '再闪' ), 1000 )
+		.hit( LRJ( '!' ) , 1000 )
+		.hit( LRJ( '-100HP' ) , 200 )
+		.hit( LRJ( '-100HP' ) , 200 )
+		.hit( LRJ( '-100HP' ) , 200 )
+		.hit( LRJ( '-100HP' ) , 200 )
+		.hit( LRJ( '-100HP(┬＿┬)' ) , 200 )
+		.hit( LRJ( '-100HP(┬＿┬)' ) , 200 )
+		.hit( LRJ( '-100HP(┬＿┬)' ) , 200 )
+		.hit( LRJ( ' (┬＿┬) ' ) , 1300 );
+
+	kungfu.find( 'LiXiaolong' ).perform();
+	kungfu.find( 'LuRenjia' ).perform();
+</script>
+</body>
+</html>		
